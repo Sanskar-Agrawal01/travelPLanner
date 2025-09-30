@@ -1,0 +1,111 @@
+<% layout('layouts/boilerplate') %>
+  <body class="font-sans min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-2xl bg-white rounded-xl p-8">
+      <form
+        method="POST"
+        action="/listings/<%= listing._id %>?_method=PUT"
+        class="space-y-5"
+      >
+        <!-- Title -->
+        <div>
+          <label for="title" class="block text-gray-700 font-medium mb-2"
+            >Title</label
+          >
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            value="<%= listing.title %>"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-lime-500 focus:outline-none"
+          />
+        </div>
+
+        <!-- Description -->
+        <div>
+          <label for="description" class="block text-gray-700 font-medium mb-2"
+            >Description</label
+          >
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-lime-500 focus:outline-none"
+          >
+<%= listing.description %></textarea
+          >
+        </div>
+
+        <!-- Price -->
+        <div>
+          <label for="price" class="block text-gray-700 font-medium mb-2"
+            >Price (per night)</label
+          >
+          <input
+            type="number"
+            id="price"
+            name="price"
+            required
+            value="<%= listing.price %>"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-lime-500 focus:outline-none"
+          />
+        </div>
+
+        <!-- Location -->
+        <div>
+          <label for="location" class="block text-gray-700 font-medium mb-2"
+            >Location</label
+          >
+          <input
+            type="text"
+            id="location"
+            name="location"
+            required
+            value="<%= listing.location %>"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-lime-500 focus:outline-none"
+          />
+        </div>
+
+        <!-- Country -->
+        <div>
+          <label for="country" class="block text-gray-700 font-medium mb-2"
+            >Country</label
+          >
+          <input
+            type="text"
+            id="country"
+            name="country"
+            required
+            value="<%= listing.country %>"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-lime-500 focus:outline-none"
+          />
+        </div>
+
+        <!-- Image URL -->
+        <div>
+          <label for="image" class="block text-gray-700 font-medium mb-2"
+            >Image URL</label
+          >
+          <input
+            type="url"
+            id="image"
+            name="image[url]"
+            value="<%= listing.image.url %>"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-lime-500 focus:outline-none"
+          />
+        </div>
+
+        <!-- Submit -->
+        <div class="text-left mt-8">
+          <button
+            type="submit"
+            class="bg-red-600 hover:bg-red-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition"
+          >
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

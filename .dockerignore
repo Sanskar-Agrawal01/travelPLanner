@@ -1,0 +1,15 @@
+node_modules
+npm-debug.log
+dist
+build
+.env
+.DS_Store
+*.log
+*.tsbuildinfo
+coverage
+.idea
+.vscode
+*.swp
+*.swo
+*.bak
+*.tmp
